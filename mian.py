@@ -175,6 +175,9 @@ if __name__ == "__main__":
         # Step 2: Copy the converted file to the WSL directory
         copy_to_wsl(converted_file, wsl_directory)
 
+        if os.path.exists(converted_file):
+            os.remove(converted_file)
+
         # Step 3: Execute commands in WSL
         execute_in_wsl(wsl_commands)
     
